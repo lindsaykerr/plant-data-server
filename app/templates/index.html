@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask App</title>
+    <title>Plant Data Server</title>
 </head>
 <body>
-    <h1>Welcome to the Flask App</h1>
+    <h1>Welcome to Plant data server API decription</h1>
+    <p>Here you can find the API documentation for the plant data server</p>
+    <p>The following list the API paths with descriptions:</p>
+    <ul>
+        <li><a href="/api/v1/submit">/api/v1/submit</a> Submits sensor data to the server (POST METHOD)</li>
+        <li><a href="/api/v1/data/1/latest">/api/v1/data/{plant id}/latest</a> Get the latest data for a plant (GET METHOD)</li>
+        <li><a href="/api/v1/reset/db">/api/v1/reset/db</a> Wipes testing database of sensor data (DELETE METHOD)</li>
+    </ul>
 </body>
 </html>
