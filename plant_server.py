@@ -6,6 +6,6 @@ app = create_app()
 
 # if the app is running as the main program, the app.run() method will run the app
 if __name__ == '__main__':
-   app.run(port=7070, debug=True)
+   app.run(host='0.0.0.0', port=7070, debug=True)
 
 

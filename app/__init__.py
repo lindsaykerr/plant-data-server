@@ -11,7 +11,14 @@ def create_app(test_config=True):
 
     # create a new flask app object within the context of the app module
     app = Flask(__name__)
- 
+    @app.after_request
+    def add_cors_headers(response):
+        """Adds CORS headers to every response."""
+        response.headers['Access-Control-Allow-Origin'] = '*'  # Or your specific origin
+        response.headers['Access-Control-Allow-Headers'] = 'Content-Type,Authorization'
+        response.headers['Access-Control-Allow-Methods'] = 'GET,PUT,POST,DELETE,OPTIONS'
+        return response
+    
     # the following will be used set default configurations for the app
     app.config.from_mapping(
         SECRET_KEY='dev', 
