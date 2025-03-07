@@ -3,7 +3,7 @@
 import os, sqlite3
 from datetime import datetime
 from flask import Flask, request, jsonify, render_template, g
-from instance.app_config import Config
+#from instance.app_config import Config
 
 
 
