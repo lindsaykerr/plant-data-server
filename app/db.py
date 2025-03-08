@@ -13,7 +13,9 @@ def get_db():
     # if there is already a connection for this context return the connection,
     # otherwise create a new connection
     if 'db' not in g:
+  
         g.db = sqlite3.connect(
+            
             current_app.config['DATABASE'],
             detect_types=sqlite3.PARSE_DECLTYPES
         )
@@ -31,10 +33,14 @@ def close_db(e=None):
 
 # create a new table in the database
 def init_db():
+    
     db = get_db()
+    print("Initializing the database connection")
     with current_app.open_resource('db_schema.sql') as f:
+        print("Opening the database schema file")
         try:
             db.executescript(f.read().decode('utf8'))
+            print("Database schema created")
         except sqlite3.OperationalError:
             print("Issue with executing the script")
             pass
