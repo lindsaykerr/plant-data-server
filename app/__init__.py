@@ -25,7 +25,7 @@ def create_app(test_config=True):
         DATABASE=os.path.join(os.path.realpath(''), 'instance', 'plant_data.db')
         )
     
-    app.config['APPLICATION_ROOT'] = '/plant-server'
+    #app.config['APPLICATION_ROOT'] = '/plant-server'
     
     """
     # ensure the instance folder exists and that it contains the database file
